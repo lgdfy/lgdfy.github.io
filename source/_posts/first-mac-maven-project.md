@@ -1,5 +1,6 @@
 ---
 title: mac系统下的Maven安装配置
+permalink: Maven_primary_knowledge
 date: 2018-12-25 13:35:58
 categories: maven
 tags: [maven, java, mac]
