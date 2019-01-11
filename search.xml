@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo博客迁移]]></title>
+    <url>%2F2019%2F01%2F11%2FChange_blog_workspace%2F</url>
+    <content type="text"><![CDATA[** 拷贝原博客部分文件 _config.yml theme source scaffolds package.json .gitignore 以上文件需要从之前工作目录中备份出来，拷贝到新电脑的新工作目录。 **新博客搭建12345678// 全局安装hexonpm install hexo-cli -g// 把必须拷贝的文件，拷贝到新建的文件夹内，执行以下命令// 在新建的文件夹内打开命令行，安装必要的模块，初始化// 这里不要hexo init初始化，如果执行了hexo init，重新拷贝文件覆盖。npm install// 安装其他一些必要的组件npm install hexo-deployer-git --save **测试12345678// 先本地预览hexo cleanhexo ghexo s// 正式部署hexo cleanhexo ghexo d]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微信的openid和unionid]]></title>
     <url>%2F2018%2F12%2F27%2FWechat_openid_and_unionid%2F</url>
     <content type="text"><![CDATA[OpenId是表示用户在你的当前应用中的唯一标示,比如小程序，微信公众号等，这些都算是一个应用，如果你有多个应用，同一个用户的OpenId可能并不相同 UnionId借用微信官方文档中的话来说，如果开发者拥有多个移动应用、网站应用、和公众帐号（包括小程序），可通过 UnionID 来区分用户的唯一性，因为只要是同一个微信开放平台帐号下的移动应用、网站应用和公众帐号（包括小程序），用户的 UnionID 是唯一的。换句话说，同一用户，对同一个微信开放平台下的不同应用，UnionId是相同的。 总结同一个用户，在你的多个应用中，OpenId可能都不相同；但是，UnionId一定会相同的。所以，如果你有多个小程序或者微信公众号，需要确定是否为同一个用户的时候，就需要UnionId来确定。]]></content>
