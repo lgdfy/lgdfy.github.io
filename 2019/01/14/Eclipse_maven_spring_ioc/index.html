@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="创建maven项目eclipse默认创建的maven项目需要进行一些改动。  pom.xml文件填写如下内容：">
+<meta name="description" content="关于Spring中IOC的总结  创建maven项目eclipse默认创建的maven项目需要进行一些改动。  pom.xml文件填写如下内容：">
 <meta name="keywords" content="maven,eclipse,spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="eclipse中创建maven工程，实现简单的spring框架xml开发">
-<meta property="og:url" content="http://yoursite.com/2019/01/14/Eclipse_maven_spring_xml/index.html">
+<meta property="og:title" content="eclipse中创建maven工程，实现简单的spring框架IOC开发">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/Eclipse_maven_spring_ioc/index.html">
 <meta property="og:site_name" content="Kevin&#39;s Blog">
-<meta property="og:description" content="创建maven项目eclipse默认创建的maven项目需要进行一些改动。  pom.xml文件填写如下内容：">
+<meta property="og:description" content="关于Spring中IOC的总结  创建maven项目eclipse默认创建的maven项目需要进行一些改动。  pom.xml文件填写如下内容：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-14T06:08:40.843Z">
+<meta property="og:updated_time" content="2019-01-14T09:38:56.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="eclipse中创建maven工程，实现简单的spring框架xml开发">
-<meta name="twitter:description" content="创建maven项目eclipse默认创建的maven项目需要进行一些改动。  pom.xml文件填写如下内容：">
+<meta name="twitter:title" content="eclipse中创建maven工程，实现简单的spring框架IOC开发">
+<meta name="twitter:description" content="关于Spring中IOC的总结  创建maven项目eclipse默认创建的maven项目需要进行一些改动。  pom.xml文件填写如下内容：">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/14/Eclipse_maven_spring_xml/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/14/Eclipse_maven_spring_ioc/">
 
 
 
 
 
-  <title>eclipse中创建maven工程，实现简单的spring框架xml开发 | Kevin's Blog</title>
+  <title>eclipse中创建maven工程，实现简单的spring框架IOC开发 | Kevin's Blog</title>
   
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/Eclipse_maven_spring_xml/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/Eclipse_maven_spring_ioc/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin">
@@ -305,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">eclipse中创建maven工程，实现简单的spring框架xml开发</h1>
+          <h1 class="post-title" itemprop="name headline">eclipse中创建maven工程，实现简单的spring框架IOC开发</h1>
         
 
         <div class="post-meta">
@@ -329,7 +329,7 @@
 		  
 			<span class="post-updated">
 				&nbsp; | &nbsp; 更新于
-				<time itemprop="dateUpdated" datetime="2019-01-14T15:08:40+09:00" content="2019-01-14">
+				<time itemprop="dateUpdated" datetime="2019-01-14T18:38:56+09:00" content="2019-01-14">
 				  2019-01-14
 				</time>
 		    </span>
@@ -385,12 +385,18 @@
       
 
       
-        <h1 id="创建maven项目"><a href="#创建maven项目" class="headerlink" title="创建maven项目"></a><strong>创建maven项目</strong></h1><p>eclipse默认创建的maven项目需要进行一些改动。</p>
+        <blockquote>
+<p>关于Spring中IOC的总结</p>
+</blockquote>
+<h1 id="创建maven项目"><a href="#创建maven项目" class="headerlink" title="创建maven项目"></a><strong>创建maven项目</strong></h1><p>eclipse默认创建的maven项目需要进行一些改动。</p>
 <ul>
-<li><code>pom.xml</code>文件填写如下内容：</li>
+<li><code>pom.xml</code>文件填写如下内容：<a id="more"></a>
+</li>
 </ul>
-<a id="more"></a>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">spring.version</span>&gt;</span>4.3.7.RELEASE<span class="tag">&lt;/<span class="name">spring.version</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.jupiter<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-jupiter-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>$</span><span class="template-variable">&#123;spring.version&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>$</span><span class="template-variable">&#123;spring.version&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>$</span><span class="template-variable">&#123;spring.version&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">build</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">finalName</span>&gt;</span>spring-test1<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin --&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></span><br><span class="line"><span class="xml">					<span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span></span><br><span class="line"><span class="xml">					<span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span></span><br><span class="line"><span class="xml">					<span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+</div></div>
 <ul>
 <li><code>web.xml</code>改成如下：</li>
 </ul>
@@ -399,10 +405,129 @@
 <ul>
 <li>任意目录下创建文件 <code>applicationContext.xml</code>(可以起任意名称),例如在<code>src/main/java</code>创建<code>applicationContext.xml</code>文件，文件内容为:</li>
 </ul>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span></span><br><span class="line"><span class="xml">	xmlns:p="http://www.springframework.org/schema/p"</span></span><br><span class="line"><span class="xml">	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line"><span class="xml">	xsi:schemaLocation="http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="xml">	http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">	<span class="comment">&lt;!-- Spring入门 --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userData"</span> <span class="attr">class</span>=<span class="string">"com.louiskevin.spring.demo1.UserData"</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- 注入自定义对象类型参数 --&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- &lt;property name="userDao" ref="userDao"&gt;&lt;/property&gt; --&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- 构造器 name匹配 --&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"userDao1"</span> <span class="attr">ref</span>=<span class="string">"userDao"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"kevin userData"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userDao"</span> <span class="attr">class</span>=<span class="string">"com.louiskevin.spring.demo1.UserDaoImpl"</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- 通过属性setter方法注入数据 --&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"kevin"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- 通过构造函数注入数据 索引匹配 --&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- &lt;constructor-arg value="kevin1" index="0"&gt;&lt;/constructor-arg&gt; --&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- 参数类型匹配 --&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- &lt;constructor-arg value="kevin2" type="java.lang.String"&gt;&lt;/constructor-arg&gt; --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">	<span class="comment">&lt;!-- p名称空间 --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userDao:p"</span></span></span></span><br><span class="line"><span class="xml">		class="com.louiskevin.spring.demo1.UserDaoImpl" p:name="kevin:p"&gt;</span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- p名称空间注入对象 p:userDao-ref="userDao" --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">	<span class="comment">&lt;!-- spEL注入 --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"emloyee"</span> <span class="attr">class</span>=<span class="string">"com.louiskevin.spring.demo1.Emloyee"</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"#</span></span></span><span class="template-variable">&#123;userDao.getName()&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">	<span class="comment">&lt;!-- 复合对象注入 --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"collectionBean"</span></span></span></span><br><span class="line"><span class="xml">		class="com.louiskevin.spring.demo1.CollectionBean"&gt;</span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"arrsStrings"</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">list</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">value</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">value</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">value</span>&gt;</span>赵六<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;/<span class="name">list</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"arrayList"</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">list</span>&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"userData"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;/<span class="name">list</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="comment">&lt;!-- map set类型同样可以注入 --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="comment">&lt;!-- 导入其他xml配置文件 --&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">"xxx.xml"</span>/&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+</div></div>
 <p>新建测试类<code>SpringDemo1.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.louiskevin.spring.demo1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.DisplayName;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringDemo1</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="meta">@DisplayName</span>(<span class="string">"第一个Spring"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ClassPathXmlApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(</span><br><span class="line">				<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">		UserDao userDao = (UserDao) applicationContext.getBean(<span class="string">"userDao"</span>);</span><br><span class="line">		userDao.save();</span><br><span class="line">		applicationContext.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="meta">@DisplayName</span>(<span class="string">"第二个Spring"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ClassPathXmlApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(</span><br><span class="line">				<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">		UserData userData = (UserData) applicationContext.getBean(<span class="string">"userData"</span>);</span><br><span class="line">		userData.name();</span><br><span class="line">		applicationContext.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="meta">@DisplayName</span>(<span class="string">"第三个Spring"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ClassPathXmlApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(</span><br><span class="line">				<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">		UserDao userDao = (UserDao) applicationContext.getBean(<span class="string">"userDao:p"</span>);</span><br><span class="line">		userDao.save();</span><br><span class="line">		applicationContext.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="meta">@DisplayName</span>(<span class="string">"第四个Spring"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ClassPathXmlApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(</span><br><span class="line">				<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">		Emloyee emloyee = (Emloyee) applicationContext.getBean(<span class="string">"emloyee"</span>);</span><br><span class="line">		emloyee.print();</span><br><span class="line">		applicationContext.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="meta">@DisplayName</span>(<span class="string">"第五个Spring"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 可以加载多个xml文件</span></span><br><span class="line">		ClassPathXmlApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(</span><br><span class="line">				<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">		CollectionBean collectionBean = (CollectionBean) applicationContext.getBean(<span class="string">"collectionBean"</span>);</span><br><span class="line">		System.out.println(collectionBean);</span><br><span class="line">		collectionBean.getArrayList().get(<span class="number">0</span>).name();</span><br><span class="line">		applicationContext.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>主要是将对象的创建交给spring管理，通过反射得到对象，可以指定创建对象的生命周期以及单例还是多例等等属性。DI(依赖注入)通过xml文件来配置，了解即可。</p>
+
+</div></div>
+<p>主要是将对象的创建交给spring管理，通过反射得到对象，可以指定创建对象的生命周期以及单例还是多例等等属性。DI(依赖注入)通过xml文件来配置，了解即可,下面是注解开发。</p>
+<h1 id="Spring注解开发"><a href="#Spring注解开发" class="headerlink" title="Spring注解开发"></a><strong>Spring注解开发</strong></h1><ul>
+<li>创建<code>spring-auto.xml</code>文件，<code>schema</code>约束多添加context的约束，内容如下：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:p</span>=<span class="string">"http://www.springframework.org/schema/p"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">	http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">	http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">	http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">&lt;!-- 使用IOC注解开发，开启component扫描，告诉那些包下的类可以使用注解，扫描类上的注解 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context:component-scan</span></span></span><br><span class="line"><span class="tag">		<span class="attr">base-package</span>=<span class="string">"com.louiskevin.spring.demo2"</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.cnblogs.com/zxf330301/articles/6559210.html" rel="noopener" target="_blank">引用网友“随风逝去,只是凋零”的一篇博客</a><br>里面有对各种注解的介绍。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Controller</td>
+<td>组合注解（组合了@Component注解），应用在MVC层（控制层）,DispatcherServlet会自动扫描注解了此注解的类，然后将web请求映射到注解了@RequestMapping的方法上。</td>
+</tr>
+<tr>
+<td>@Service</td>
+<td>组合注解（组合了@Component注解），应用在service层（业务逻辑层）</td>
+</tr>
+<tr>
+<td>@Reponsitory</td>
+<td>组合注解（组合了@Component注解），应用在dao层（数据访问层）</td>
+</tr>
+<tr>
+<td>@Component</td>
+<td>表示一个带注释的类是一个“组件”，成为Spring管理的Bean。当使用基于注解的配置和类路径扫描时，这些类被视为自动检测的候选对象。同时@Component还是一个元注解。</td>
+</tr>
+<tr>
+<td>@Autowired</td>
+<td>Spring提供的工具（由Spring的依赖注入工具（BeanPostProcessor、BeanFactoryPostProcessor）自动注入。）</td>
+</tr>
+<tr>
+<td>@Resource</td>
+<td>相当于@Autowired和@Qualifier的组合</td>
+</tr>
+<tr>
+<td>@Qualifier</td>
+<td>对依赖注入的条件进行限制</td>
+</tr>
+<tr>
+<td>@Scope</td>
+<td>用于指定scope作用域的（用在类上）</td>
+</tr>
+<tr>
+<td>@PostConstruct</td>
+<td>标注在方法上，该方法在构造函数执行完成之后执行。</td>
+</tr>
+<tr>
+<td>@PreDestroy</td>
+<td>标注在方法上，该方法在对象销毁之前执行。</td>
+</tr>
+<tr>
+<td>@EnableAsync</td>
+<td>开启异步任务支持。注解在配置类上。</td>
+</tr>
+<tr>
+<td>@Async</td>
+<td>注解在方法上标示这是一个异步方法，在类上标示这个类所有的方法都是异步方法。</td>
+</tr>
+<tr>
+<td>@RunWith</td>
+<td>这个是Junit的注解，springboot集成了junit。一般在测试类里使用:@RunWith(SpringJUnit4ClassRunner.class) — SpringJUnit4ClassRunner在JUnit环境下提供Sprng TestContext Framework的功能</td>
+</tr>
+<tr>
+<td>@GetMapping</td>
+<td>GET方式的@RequestMapping</td>
+</tr>
+<tr>
+<td>@PostMapping</td>
+<td>POST方式的@RequestMapping</td>
+</tr>
+<tr>
+<td>@ResponseBody</td>
+<td>将返回值放在response体内。返回的是数据而不是页面</td>
+</tr>
+<tr>
+<td>@RequestBody</td>
+<td>允许request的参数在request体中，而不是在直接链接在地址的后面。此注解放置在参数前。</td>
+</tr>
+<tr>
+<td>@PathVariable</td>
+<td>放置在参数前，用来接受路径参数。</td>
+</tr>
+<tr>
+<td>@Bean</td>
+<td>注解在方法上，声明当前方法的返回值为一个Bean。返回的Bean对应的类中可以定义init()方法和destroy()方法，然后在@Bean(initMethod=“init”,destroyMethod=“destroy”)定义，在构造之后执行init，在销毁之前执行destroy。</td>
+</tr>
+<tr>
+<td>@Aspect</td>
+<td>声明一个切面（就是说这是一个额外功能）</td>
+</tr>
+<tr>
+<td>@After</td>
+<td>后置建言（advice），在原方法前执行。</td>
+</tr>
+<tr>
+<td>@Before</td>
+<td>前置建言（advice），在原方法后执行。</td>
+</tr>
+<tr>
+<td>@Around</td>
+<td>环绕建言（advice），在原方法执行前执行，在原方法执行后再执行（@Around可以实现其他两种advice）</td>
+</tr>
+<tr>
+<td>@PointCut</td>
+<td>声明切点，即定义拦截规则，确定有哪些方法会被切入</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -579,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建maven项目"><span class="nav-number">1.</span> <span class="nav-text">创建maven项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建maven项目"><span class="nav-number">1.</span> <span class="nav-text">创建maven项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring注解开发"><span class="nav-number">2.</span> <span class="nav-text">Spring注解开发</span></a></li></ol></div>
             
 
           </div>
